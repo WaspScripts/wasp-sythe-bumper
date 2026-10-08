@@ -1,24 +1,19 @@
 {
-	"ts-node": { "require": ["tsconfig-paths/register"] },
 	"compilerOptions": {
 		"lib": ["ESNext"],
-		"module": "commonjs",
-		"moduleResolution": "Node",
 		"target": "ESNext",
-		"outDir": "build",
-		"forceConsistentCasingInFileNames": true,
-		"sourceMap": false,
-		"esModuleInterop": true,
-		"experimentalDecorators": true,
-		"emitDecoratorMetadata": true,
-		"allowSyntheticDefaultImports": true,
+		"module": "Preserve",
+		"moduleDetection": "force",
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"verbatimModuleSyntax": true,
+		"noEmit": true,
+		"types": ["bun"],
+		"strict": true,
 		"skipLibCheck": true,
-		"skipDefaultLibCheck": true,
-		"resolveJsonModule": true,
-		"importHelpers": true,
-		"baseUrl": ".",
+		"noFallthroughCasesInSwitch": true,
+		"forceConsistentCasingInFileNames": true,
 		"paths": { "$lib/*": ["./src/lib/*"] }
 	},
-	"include": ["environment.d.ts", "src"],
-	"exclude": ["node_modules", "**/*.spec.ts"]
+	"include": ["src"]
 }

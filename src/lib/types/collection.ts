@@ -1,15 +1,10 @@
 import type { Database } from "$lib/types/supabase"
 
-export type ScriptTables<T extends keyof Database["scripts"]["Tables"]> =
-	Database["scripts"]["Tables"][T]["Row"]
+type ScriptRow = Database["scripts"]["Tables"]["scripts"]["Row"]
+export type ScriptStats = Database["stats"]["Tables"]["values"]["Row"]
 
-interface ScriptBase extends ScriptTables<"scripts"> {}
-interface ScriptProtected extends ScriptTables<"protected"> {}
-interface StatsSimba extends ScriptTables<"stats_simba"> {}
-
-export interface Script extends ScriptBase {
-	protected: ScriptProtected
-	stats_simba: StatsSimba
+export interface Script extends Pick<ScriptRow, "id" | "url" | "title" | "description"> {
+	stats: ScriptStats | undefined
 }
 
 export interface TotalStats {

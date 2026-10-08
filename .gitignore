@@ -2,6 +2,5 @@ node_modules
 build
 .env
 .env.*
-stack.env
 !.env.example
 supabase

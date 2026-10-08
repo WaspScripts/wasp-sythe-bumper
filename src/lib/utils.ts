@@ -46,3 +46,13 @@ export function formatRSNumber(n: number): string {
 
 	return parseFloat(f.toFixed(2)).toString() + " " + arr[i]
 }
+
+export function log(...args: unknown[]) {
+	const timestamp = new Date().toISOString().replace("T", " ").replace("Z", "")
+	console.log(`[${timestamp}]:`, ...args)
+}
+
+export function logError(...args: unknown[]) {
+	const timestamp = new Date().toISOString().replace("T", " ").replace("Z", "")
+	console.error(`[${timestamp}]:`, ...args)
+}
